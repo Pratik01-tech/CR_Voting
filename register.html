@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting System - Voter Registration</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="register-container">
+        <div class="register-card">
+            <h1 class="register-title">Online Voting System</h1>
+            <h2 class="register-subtitle">Voter Registration</h2>
+            
+            <form id="registerForm" class="register-form" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="fullName">FULL NAME</label>
+                    <input type="text" id="fullName" name="fullName" class="form-control" placeholder="Enter your full name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="mobile">MOBILE NUMBER</label>
+                    <input type="tel" id="mobile" name="mobile" class="form-control" placeholder="Enter your mobile number" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">PASSWORD</label>
+                    <div class="password-field">
+                        <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" required>
+                        <i class="fas fa-eye toggle-password" id="togglePassword"></i>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword">CONFIRM PASSWORD</label>
+                    <div class="password-field">
+                        <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" placeholder="Confirm your password" required>
+                        <i class="fas fa-eye toggle-password" id="toggleConfirmPassword"></i>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="voterCard">VOTER ID CARD IMAGE</label>
+                    <div class="file-upload">
+                        <input type="file" id="voterCard" name="voterCard" accept="image/*" required>
+                        <label for="voterCard">
+                            <i class="fas fa-upload"></i>
+                            <br>Click to upload Voter ID Card Image
+                            <br><small>Supports: JPG, PNG, GIF (Max: 5MB)</small>
+                        </label>
+                    </div>
+                    <div id="imagePreview" class="image-preview" style="display: none;">
+                        <img id="previewImage" src="" alt="Preview">
+                    </div>
+                </div>
+                
+                <button type="submit" class="login-btn">REGISTER</button>
+            </form>
+            
+            <div class="login-links">
+                <p>Already have an account? <a href="index.html" class="link">Login here</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/register.js"></script>
+</body>
+</html>

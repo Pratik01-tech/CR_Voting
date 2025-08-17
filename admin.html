@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting System - Admin Panel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Admin Login Section -->
+    <div id="adminLogin" class="login-container">
+        <div class="login-card">
+            <h1 class="login-title">Online Voting System</h1>
+            <div style="text-align: center; margin-bottom: 20px;">
+                <div class="admin-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h2 class="login-subtitle">Admin Panel</h2>
+            </div>
+            
+            <form id="adminLoginForm" class="login-form">
+                <div class="form-group">
+                    <label for="adminId">ADMIN ID</label>
+                    <input type="text" id="adminId" class="form-control" placeholder="ADMIN ID" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="adminPassword">ADMIN PASSWORD</label>
+                    <div class="password-field">
+                        <input type="password" id="adminPassword" class="form-control" placeholder="ADMIN PASSWORD" required>
+                        <i class="fas fa-eye toggle-password" id="toggleAdminPassword"></i>
+                    </div>
+                </div>
+                
+                <button type="submit" class="login-btn">LOGIN TO ADMIN PANEL</button>
+            </form>
+            
+            <div class="login-links">
+                <p><a href="index.html" class="link">← Back to User Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard Section -->
+    <div id="adminDashboard" class="admin-container" style="display: none;">
+        <!-- Header -->
+        <header class="admin-header">
+            <div class="admin-info">
+                <div class="admin-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div>
+                    <h1 class="admin-title">Admin Dashboard</h1>
+                    <p class="admin-subtitle">System Management & Analytics</p>
+                </div>
+            </div>
+            <button id="logoutAdmin" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i> LOGOUT
+            </button>
+        </header>
+
+        <!-- System Statistics -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="stat-number" id="totalUsers">4</div>
+                <div class="stat-label">TOTAL USERS</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-cube"></i>
+                </div>
+                <div class="stat-number" id="totalVotes">2</div>
+                <div class="stat-label">TOTAL VOTES</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-trophy" style="color: #ffd700;"></i>
+                </div>
+                <div class="stat-number" id="currentWinner">None</div>
+                <div class="stat-label">CURRENT WINNER</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-chart-line" style="color: #ff6b6b;"></i>
+                </div>
+                <div class="stat-number" id="activeRound">Active</div>
+                <div class="stat-label">ACTIVE ROUND</div>
+            </div>
+        </div>
+
+        <!-- System Actions -->
+        <div class="actions-section">
+            <h2 class="actions-title">
+                <i class="fas fa-cogs"></i>
+                SYSTEM ACTIONS
+            </h2>
+            
+            <div class="actions-grid">
+                <div class="action-card" data-action="startVoting">
+                    <div class="action-icon">
+                        <i class="fas fa-play" style="color: #ffa500;"></i>
+                    </div>
+                    <div class="action-title">START VOTING</div>
+                    <div class="action-subtitle">ACTIVATE VOTING SYSTEM</div>
+                </div>
+                
+                <div class="action-card" data-action="endVoting">
+                    <div class="action-icon">
+                        <i class="fas fa-stop" style="color: #ffa500;"></i>
+                    </div>
+                    <div class="action-title">END VOTING</div>
+                    <div class="action-subtitle">DEACTIVATE VOTING SYSTEM</div>
+                </div>
+                
+                <div class="action-card" data-action="showResults">
+                    <div class="action-icon">
+                        <i class="fas fa-trophy" style="color: #ffd700;"></i>
+                    </div>
+                    <div class="action-title">SHOW RESULTS</div>
+                    <div class="action-subtitle">DISPLAY VOTING WINNER</div>
+                </div>
+                
+                <div class="action-card" data-action="viewUsers">
+                    <div class="action-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="action-title">VIEW ALL USERS</div>
+                    <div class="action-subtitle">SEE REGISTERED USERS</div>
+                </div>
+                
+                <div class="action-card" data-action="resetSystem">
+                    <div class="action-icon">
+                        <i class="fas fa-undo"></i>
+                    </div>
+                    <div class="action-title">RESET VOTING SYSTEM</div>
+                    <div class="action-subtitle">START A NEW VOTING ROUND</div>
+                </div>
+                
+                <div class="action-card" data-action="votingHistory">
+                    <div class="action-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <div class="action-title">VOTING HISTORY</div>
+                    <div class="action-subtitle">COMPLETE VOTE RECORDS</div>
+                </div>
+                
+                <div class="action-card" data-action="addCRMember">
+                    <div class="action-icon">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="action-title">ADD CR MEMBER</div>
+                    <div class="action-subtitle">REGISTER NEW CANDIDATE</div>
+                </div>
+                
+                <div class="action-card" data-action="viewUsers2">
+                    <div class="action-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="action-title">VIEW ALL USERS</div>
+                    <div class="action-subtitle">SEE REGISTERED USERS</div>
+                </div>
+                
+                <div class="action-card" data-action="clearAllData" style="background: linear-gradient(135deg, #ff4757 0%, #ff3838 100%);">
+                    <div class="action-icon">
+                        <i class="fas fa-trash" style="color: #ff6b6b;"></i>
+                    </div>
+                    <div class="action-title">CLEAR ALL DATA</div>
+                    <div class="action-subtitle">DELETE EVERYTHING</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Voting Results Section (Admin Only) -->
+        <div class="actions-section">
+            <h2 class="actions-title">
+                <i class="fas fa-chart-bar"></i>
+                VOTING RESULTS (ADMIN ONLY)
+            </h2>
+            
+            <div id="votingResults" class="voting-results-grid">
+                <!-- Voting results will be loaded here -->
+            </div>
+        </div>
+
+        <!-- Current CR Members Display -->
+        <div class="actions-section">
+            <h2 class="actions-title">
+                <i class="fas fa-users"></i>
+                CURRENT CR MEMBERS
+            </h2>
+            
+            <div id="currentCRMembers" class="cr-members-grid">
+                <!-- CR members will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Add CR Member Modal -->
+    <div id="addCRMemberModal" class="modal">
+        <div class="modal-content">
+            <h3 class="modal-title">Add New CR Member</h3>
+            
+            <form id="addCRMemberForm">
+                <div class="form-group">
+                    <label for="candidateName">CANDIDATE NAME</label>
+                    <input type="text" id="candidateName" class="form-control" placeholder="Enter candidate name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="candidatePosition">POSITION</label>
+                    <select id="candidatePosition" class="form-control" required>
+                        <option value="">Select Position</option>
+                        <option value="President">President</option>
+                        <option value="Vice President">Vice President</option>
+                        <option value="Secretary">Secretary</option>
+                        <option value="Treasurer">Treasurer</option>
+                        <option value="General Member">General Member</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="candidateDescription">DESCRIPTION (Optional)</label>
+                    <textarea id="candidateDescription" class="form-control" placeholder="Enter candidate description" rows="3"></textarea>
+                </div>
+                
+                <div class="modal-buttons">
+                    <button type="submit" class="btn btn-primary">Add Candidate</button>
+                    <button type="button" id="closeCRModal" class="btn btn-secondary">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>

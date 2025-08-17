@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting System - Voting</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="voting-container">
+        <!-- Header with Voter Info -->
+        <header class="voting-header">
+            <h1 class="welcome-text" id="welcomeMessage">Welcome, Jessica!</h1>
+            <div class="voter-info">
+                <div class="voter-details">
+                    <div class="voter-name" id="voterName">Jessica</div>
+                    <div class="voter-mobile" id="voterMobile">+1234567890</div>
+                </div>
+                <img id="voterCardImage" class="voter-card-image" src="images/default-avatar.jpg" alt="Voter ID Card">
+                <button id="logoutVoter" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> LOGOUT
+                </button>
+            </div>
+        </header>
+
+        <!-- Voting Section -->
+        <div class="voting-section">
+            <h2 class="voting-instruction">Vote for your favorite candidate:</h2>
+            
+            <div id="candidatesGrid" class="candidates-grid">
+                <!-- Candidates will be loaded dynamically -->
+            </div>
+            
+            <!-- Important Notice -->
+            <div class="voting-notice">
+                <p><i class="fas fa-info-circle"></i> <strong>Important:</strong> You can only vote once. After voting, you will be redirected to the login page and cannot vote again.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vote Confirmation Modal -->
+    <div id="voteModal" class="modal">
+        <div class="modal-content">
+            <h3 class="modal-title">Confirm Your Vote</h3>
+            <p>You have selected: <strong id="selectedCandidateName"></strong></p>
+            <p><strong>Warning:</strong> This action cannot be undone. You will only be able to vote once.</p>
+            <div class="modal-buttons">
+                <button id="confirmVote" class="btn btn-primary">Confirm Vote</button>
+                <button id="cancelVote" class="btn btn-secondary">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/voting.js"></script>
+</body>
+</html>
